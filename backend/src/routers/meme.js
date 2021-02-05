@@ -9,11 +9,12 @@ router.post('/memes', async (req, res) => {
 
     try {
         await meme.save()
-        res.status(201).send(meme)
+        res.status(201).send(meme._id)
     } catch (e) {
         res.status(400).send(e)
     }
 })
+
 router.get('/memes', async (req, res) => {
 
     Meme.find({}).sort({ createdAt: 'desc' }).limit(100).then((memes) => {
@@ -21,6 +22,23 @@ router.get('/memes', async (req, res) => {
     }).catch((e) => {
         res.status(500).send()
     })
+})
+
+router.get('/memes/:id', async (req, res) => {
+
+    const _id = req.params.id
+
+    try {
+        const meme = await Meme.findById(_id).exec()
+
+        if (!meme) {
+            return res.status(404).send()
+        }
+
+        res.status(201).send(meme)
+    } catch (e) {
+        res.status(500).send()
+    }
 })
 
 module.exports = router
