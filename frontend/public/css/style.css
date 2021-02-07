@@ -1,0 +1,171 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.portrait {
+  height: 250px;
+}
+
+input {
+  border: 1px solid #cccccc;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888888;
+  background-color: #888888;
+  color: white;
+  padding: 8px;
+}
+
+.logo-box {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.ScrollStyle {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content-1 {
+  background-color: #c6f7f2;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #0f7067;
+  text-align: center;
+  font-family: "Georgia";
+  font-size: 30px;
+}
+
+.box .inputBox {
+  position: relative;
+}
+
+.box .inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #0f7067;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #b7cbeb;
+  outline: none;
+  background: transparent;
+}
+
+.box .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.box input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  background: #c6f7f2;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.box a {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1d365e;
+  background: #b7cbeb;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  float: right;
+}
+
+::placeholder {
+  color: #0f7067;
+  opacity: 0.4;
+}
+
+.main-content-2 {
+  padding: 50px;
+}
+
+.meme {
+  background-color: #c6f7f2;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+}
+.owner {
+  font-weight: bold;
+  color: #0f7067;
+}
+
+.caption {
+  font-size: 20px;
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #0f7067;
+}
+
+.pic-container {
+  margin: auto;
+  padding: 50px;
+}
+
+.pic {
+  box-shadow: 0 15px 25px rgba(6, 45, 41, 0.2);
+  border-radius: 3px;
+}

@@ -16,7 +16,6 @@ router.post('/memes', async (req, res) => {
 })
 
 router.get('/memes', async (req, res) => {
-
     Meme.find({}).sort({ createdAt: 'desc' }).limit(100).then((memes) => {
         res.send(memes)
     }).catch((e) => {
