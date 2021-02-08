@@ -2,6 +2,7 @@ const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
 const { dirname } = require("path")
+const fetch = require("node-fetch")
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -20,13 +21,12 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.static(publicDirPath))
 
-const request = require('request')
-
 app.get('/', async (req, res) => {
 
-    await request('http://localhost:3000/memes', function (error, response, body) {
-        allMemes = JSON.parse(body)
-    })
+    await fetch('http://localhost:3000/memes').then(response => response.json())
+        .then(data => {
+            allMemes = data
+        });;
 
     res.render('index', {
         'allMemes': allMemes

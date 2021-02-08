@@ -40,4 +40,28 @@ router.get('/memes/:id', async (req, res) => {
     }
 })
 
+router.patch('/memes/:id', async (req, res) => {
+    const updates = Object.keys(req.body)
+    const allowedUpdates = ['caption', 'url']
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+    if (!isValidOperation) {
+        return res.status(400).send({ error: 'Invalid Updates!' })
+    }
+
+    try {
+        const meme = await Meme.findOne({ _id: req.params.id })
+
+        if (!meme) {
+            return res.status(404).send()
+        }
+
+        updates.forEach((update) => meme[update] = req.body[update])
+        await meme.save()
+        res.send(meme)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+
 module.exports = router

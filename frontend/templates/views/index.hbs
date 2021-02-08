@@ -30,7 +30,7 @@
     <div class=" main-content-1 container">
       <div class="box">
         <h2>Send us Meme</h2>
-        <form method=" POST" id="myForm" onsubmit="setTimeout(function(){window.location.reload();},10);">
+        <form method="POST" id="myForm" onSubmit="setTimeout((function() {window.location.reload();}), 100);">
           <div class=" inputBox">
             <input type="text" name="name" id="name" placeholder="Name" required="" />
           </div>
@@ -49,11 +49,14 @@
 
     <div class='ScrollStyle main-content-2 container'>
       {{#each allMemes}}
-      <div class="meme">
-        <h4 class="owner">{{name}}</h4>
-        <div class="caption">{{caption}}</div>
-        <div class="pic-container">
-          <img class="pic" src="{{url}}" alt="image" height=400px width="350px">
+      <div class="meme" id="Meme">
+        <h4 class="owner" id="memeOwner">{{name}}</h4>
+        <div class="caption" id="memeCaption">{{caption}}</div>
+        <div class="pic-container" id="memePic-container">
+          <img class="pic" id="memePic" src="{{url}}" alt="image" height="400px" width="350px">
+        </div>
+        <div id="edit">
+          <button class="edit" onclick="Edit('{{_id}}', '{{caption}}','{{url}}')">Edit</button>
         </div>
       </div>
       <br><br>
