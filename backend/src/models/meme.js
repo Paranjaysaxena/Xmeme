@@ -20,6 +20,9 @@ const memeSchema = new mongoose.Schema({
     timestamps: true
 })
 
+// To avoid Duplicate Entries
+memeSchema.index({ name: 1, caption: 1, url: 1 }, { unique: true })
+
 const Meme = mongoose.model('Meme', memeSchema)
 
 module.exports = Meme

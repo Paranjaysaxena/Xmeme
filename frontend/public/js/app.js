@@ -48,3 +48,16 @@ async function Edit(memeId, memeCaption, memeUrl) {
 
     setTimeout((function () { window.location.reload(); }), 10);
 }
+
+async function Delete(memeId) {
+
+    await fetch('http://localhost:3000/memes/' + memeId, {
+        mode: 'cors',
+        method: "DELETE",
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    }).then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+
+    setTimeout((function () { window.location.reload(); }), 10);
+}

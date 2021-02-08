@@ -33,7 +33,7 @@ body {
   transform: translate(-50%, -50%);
   width: 25%;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.5);
+  background: white;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -62,17 +62,6 @@ body {
   border-bottom: 1px solid #b7cbeb;
   outline: none;
   background: transparent;
-}
-
-.box .inputBox label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
 }
 
 .box .inputBox input:focus ~ label,
@@ -115,6 +104,7 @@ body {
 
 .main-content-2 {
   padding: 50px;
+  min-height: 100vh;
 }
 
 .meme {
@@ -150,16 +140,23 @@ body {
   border-radius: 3px;
 }
 
-.edit {
+.bttn {
   background: transparent;
   border: none;
   outline: none;
   color: #0f7067;
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   background: white;
   box-shadow: 0 15px 25px rgba(6, 45, 41, 0.2);
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 15px;
+}
+
+.shadowed {
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(180, 180, 180));
+  filter: drop-shadow(5px 5px 5px rgb(180, 180, 180));
 }

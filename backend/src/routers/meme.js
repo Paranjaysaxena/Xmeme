@@ -1,7 +1,9 @@
+const { response } = require('express')
 const express = require('express')
 const Meme = require('../models/meme')
 const router = new express.Router()
 
+// POST request
 router.post('/memes', async (req, res) => {
     const meme = new Meme({
         ...req.body
@@ -15,31 +17,31 @@ router.post('/memes', async (req, res) => {
     }
 })
 
+// GET request for all Memes
 router.get('/memes', async (req, res) => {
-    Meme.find({}).sort({ createdAt: 'desc' }).limit(100).then((memes) => {
+    // Sort by latest timestamps and limit 100
+    Meme.find({}).sort({ createdAt: 'desc' }).limit(100).lean().then((memes) => {
         res.send(memes)
     }).catch((e) => {
         res.status(500).send()
     })
 })
 
+// GET request for a single Meme
 router.get('/memes/:id', async (req, res) => {
-
     const _id = req.params.id
-
     try {
         const meme = await Meme.findById(_id).exec()
-
         if (!meme) {
             return res.status(404).send()
         }
-
         res.status(201).send(meme)
     } catch (e) {
         res.status(500).send()
     }
 })
 
+// PATCH request for a Meme
 router.patch('/memes/:id', async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['caption', 'url']
@@ -63,5 +65,22 @@ router.patch('/memes/:id', async (req, res) => {
         res.status(400).send(e)
     }
 })
+
+
+router.delete('/memes/:id', async (req, res) => {
+    try {
+        const meme = await Meme.findOneAndDelete({ _id: req.params.id })
+
+        if (!meme) {
+            return res.status(404).send()
+        }
+
+        res.status(200).send()
+
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
 
 module.exports = router

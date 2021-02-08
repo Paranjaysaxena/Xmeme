@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <div class="logo-box">
+  <div class="logo-box shadowed">
     <img src="/img/logo.png" alt="Logo" class="logo" />
   </div>
   <div class="main-content">
@@ -55,8 +55,9 @@
         <div class="pic-container" id="memePic-container">
           <img class="pic" id="memePic" src="{{url}}" alt="image" height="400px" width="350px">
         </div>
-        <div id="edit">
-          <button class="edit" onclick="Edit('{{_id}}', '{{caption}}','{{url}}')">Edit</button>
+        <div>
+          <button class="bttn" onclick="Edit('{{_id}}', '{{caption}}','{{url}}')">edit</button>
+          <button class="bttn" onclick="Delete('{{_id}}')">delete</button>
         </div>
       </div>
       <br><br>
