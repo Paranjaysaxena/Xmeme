@@ -3,7 +3,7 @@ require('./db/mongoose')
 const memeRouter = require('./routers/meme')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8081
 
 var cors = require('cors')
 

@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/css/style.css" />
 
   <link rel="icon" href="img/title.png" type="image/icon type">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -48,20 +50,14 @@
     </div>
 
     <div class='ScrollStyle main-content-2 container'>
-      {{#each allMemes}}
-      <div class="meme" id="Meme">
-        <h4 class="owner" id="memeOwner">{{name}}</h4>
-        <div class="caption" id="memeCaption">{{caption}}</div>
-        <div class="pic-container" id="memePic-container">
-          <img class="pic" id="memePic" src="{{url}}" alt="image" height="400px" width="350px">
-        </div>
-        <div>
-          <button class="bttn" onclick="Edit('{{_id}}', '{{caption}}','{{url}}')">edit</button>
-          <button class="bttn" onclick="Delete('{{_id}}')">delete</button>
-        </div>
+      <div class="search-container text-center">
+        <form id="searchForm">
+          <input type="text" id="findOwner" placeholder="Search by owner" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
-      <br><br>
-      {{/each}}
+      <div id="allMemes"></div>
+
     </div>
   </div>
 

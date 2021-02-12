@@ -160,3 +160,29 @@ body {
   -webkit-filter: drop-shadow(5px 5px 5px rgb(180, 180, 180));
   filter: drop-shadow(5px 5px 5px rgb(180, 180, 180));
 }
+
+.search-container input[type="text"] {
+  padding: 6px;
+  margin-bottom: 16px;
+  font-size: 17px;
+  border: none;
+  background: #c6f7f2;
+  color: #0f7067;
+}
+
+.search-container button {
+  float: center;
+  padding: 6px 10px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  background: #c6f7f2;
+  color: #0f7067;
+}
+
+.search-container button:hover {
+  color: #c6f7f2;
+  background: #0f7067;
+}

@@ -22,15 +22,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirPath))
 
 app.get('/', async (req, res) => {
-
-    await fetch('http://localhost:3000/memes').then(response => response.json())
-        .then(data => {
-            allMemes = data
-        });;
-
-    res.render('index', {
-        'allMemes': allMemes
-    })
+    res.render('index')
 })
 
 app.listen(port, () => {
