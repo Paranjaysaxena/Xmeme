@@ -27,7 +27,10 @@ memeForm.addEventListener('submit', async (e) => {
 const searchForm = document.getElementById('searchForm')
 
 myfun = async function () {
-    await fetch('http://localhost:8081/memes').then(response => response.json())
+    await fetch('http://localhost:8081/memes', {
+        mode: 'cors',
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    }).then(response => response.json())
         .then(data => {
             myFun2(data)
         });

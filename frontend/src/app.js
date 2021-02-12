@@ -5,7 +5,7 @@ const { dirname } = require("path")
 const fetch = require("node-fetch")
 
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3000
 
 var cors = require('cors')
 
@@ -26,5 +26,5 @@ app.get('/', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("Server is up on 8080")
+    console.log("Server is up on " + port)
 })

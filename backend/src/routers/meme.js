@@ -3,7 +3,8 @@ const express = require('express')
 const Meme = require('../models/meme')
 const router = new express.Router()
 
-// POST request
+// Routes
+// POST a meme
 router.post('/memes', async (req, res) => {
     const meme = new Meme({
         ...req.body
@@ -21,7 +22,7 @@ router.post('/memes', async (req, res) => {
 router.get('/memes', async (req, res) => {
     // Sort by latest timestamps and limit 100
     Meme.find({}).sort({ createdAt: 'desc' }).limit(100).lean().then((memes) => {
-        res.send(memes)
+        res.status(200).send(memes)
     }).catch((e) => {
         res.status(500).send()
     })
@@ -35,7 +36,7 @@ router.get('/memes/:id', async (req, res) => {
         if (!meme) {
             return res.status(404).send()
         }
-        res.status(201).send(meme)
+        res.status(200).send(meme)
     } catch (e) {
         res.status(500).send()
     }
@@ -60,7 +61,7 @@ router.patch('/memes/:id', async (req, res) => {
 
         updates.forEach((update) => meme[update] = req.body[update])
         await meme.save()
-        res.send(meme)
+        res.status(200).send(meme)
     } catch (e) {
         res.status(400).send(e)
     }

@@ -1,0 +1,191 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Xmeme",
+        "description": "Xmeme API"
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/memes": {
+            "get": {
+                "tags": [
+                    "Memes"
+                ],
+                "summary": "Get all memes in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "name": "meme",
+                        "in": "body",
+                        "required": "true",
+                        "description": "Meme Body",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "caption": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "url": {
+                                "type": "string",
+                                "required": "true"
+                            }
+                        }
+                    }
+                ],
+                "tags": [
+                    "Memes"
+                ],
+                "summary": "Add a meme in system",
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/memes/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "description": "Id of the meme",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Memes"
+                ],
+                "summary": "Get a single memes in system",
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "description": "Id of the meme",
+                        "type": "string"
+                    },
+                    {
+                        "name": "meme",
+                        "in": "body",
+                        "required": "true",
+                        "description": "Meme Body",
+                        "type": "object",
+                        "properties": {
+                            "caption": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "url": {
+                                "type": "string",
+                                "required": "true"
+                            }
+                        }
+                    }
+                ],
+                "tags": [
+                    "Memes"
+                ],
+                "summary": "Edit a single memes's caption or url or both in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": "true",
+                        "description": "Id of the meme",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Memes"
+                ],
+                "summary": "Delete a single memes in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Meme": {
+            "required": [
+                "name",
+                "url",
+                "caption"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true
+                },
+                "url": {
+                    "type": "string",
+                    "required": true
+                },
+                "caption": {
+                    "type": "string",
+                    "required": true
+                }
+            }
+        }
+    }
+}
