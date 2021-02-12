@@ -4,7 +4,7 @@
 # Any installation related commands
 sudo apt update
 sudo apt install -y nodejs
-sudo apt install npm
-sudo apt-get install -y mongodb-org
+sudo apt install -y npm
+sudo apt install -y mongodb
 
 # Any configuration related commands
