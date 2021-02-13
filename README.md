@@ -17,7 +17,7 @@
 Node.js version 14+ and npm must be installed on your machine. MongoDb must be installed and runing on port:27017. In terminal type the following commands to run the api server:
 
 ```
-git clone https://github.com/Paranjaysaxena/Task-Manager-API.git
+git clone https://github.com/Paranjaysaxena/Xmeme.git
 cd backend
 sudo npm install
 npm start
