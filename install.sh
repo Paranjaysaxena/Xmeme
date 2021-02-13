@@ -9,6 +9,6 @@ sudo apt install -y npm
 # Any configuration related commands
 #!/bin/bash
 
-sudo apt install -y mongodb-org
+sudo apt install -y mongodb
 sudo systemctl start mongod
 sudo systemctl enable mongod
