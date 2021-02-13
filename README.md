@@ -1,4 +1,6 @@
-# Xmeme
+<h1 align="center">
+  <br>
+  <a href="https://paranjaya-xmeme.herokuapp.com/"><img src="https://github.com/Paranjaysaxena/Xmeme/blob/main/frontend/public/img/logo.png" alt="Xmeme" width="200"></a>
 
 [Live Demo](https://paranjaya-xmeme.herokuapp.com/)
 
