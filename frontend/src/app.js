@@ -5,6 +5,8 @@ const { dirname } = require("path")
 const fetch = require("node-fetch")
 
 const app = express()
+
+// PORT
 const port = process.env.PORT || 3000
 
 var cors = require('cors')
@@ -21,10 +23,12 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.static(publicDirPath))
 
+// Homepage
 app.get('/', async (req, res) => {
     res.render('index')
 })
 
+// Start server
 app.listen(port, () => {
     console.log("Server is up on " + port)
 })

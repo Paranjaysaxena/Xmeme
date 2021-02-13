@@ -21,6 +21,7 @@ router.post('/memes', async (req, res) => {
 // GET request for all Memes
 router.get('/memes', async (req, res) => {
     // Sort by latest timestamps and limit 100
+    // The lean() function tells mongoose to not hydrate query results
     Meme.find({}).sort({ createdAt: 'desc' }).limit(100).lean().then((memes) => {
         res.status(200).send(memes)
     }).catch((e) => {
@@ -42,9 +43,10 @@ router.get('/memes/:id', async (req, res) => {
     }
 })
 
-// PATCH request for a Meme
+// PATCH request to update a Meme
 router.patch('/memes/:id', async (req, res) => {
     const updates = Object.keys(req.body)
+    // Only update caption and url
     const allowedUpdates = ['caption', 'url']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
@@ -67,7 +69,7 @@ router.patch('/memes/:id', async (req, res) => {
     }
 })
 
-
+// DELETE request to delete a Meme
 router.delete('/memes/:id', async (req, res) => {
     try {
         const meme = await Meme.findOneAndDelete({ _id: req.params.id })
