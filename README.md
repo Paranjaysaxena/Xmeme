@@ -1,8 +1,9 @@
 <h1 align="center">
   <br>
   <a href="https://paranjaya-xmeme.herokuapp.com/"><img src="https://github.com/Paranjaysaxena/Xmeme/blob/main/frontend/public/img/logo.png" alt="Xmeme" width="200"></a>
+</h1>
 
-[Live Demo](https://paranjaya-xmeme.herokuapp.com/)
+## [Live Demo](https://paranjaya-xmeme.herokuapp.com/)
 
 ## A simple Meme streaming application that uses a REST API which allowes CRUD operations on memes. Features include:
 
