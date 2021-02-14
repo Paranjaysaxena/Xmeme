@@ -14,6 +14,10 @@
 - [Swagger API docs](https://paranjaya-xmeme-api.herokuapp.com/swagger-ui/).
 - Docker Solution for the server.
 - Publicly deployed HTTPS links.
+- Error handling for all routes.
+- Duplicate POST request from same payload gives error.
+- Modular, commented and documented code.
+- lean() function when large number of memes are present to improve perfoemance.
 
 ### SETUP INSTRUCTIONS
 
@@ -23,7 +27,7 @@ Node.js version 14+ and npm must be installed on your machine. MongoDb must be i
 git clone https://github.com/Paranjaysaxena/Xmeme.git
 cd backend
 sudo npm install
-npm start
+npm run dev
 ```
 
 In another terminal to run the application
@@ -31,7 +35,7 @@ In another terminal to run the application
 ```
 cd frontend
 sudo npm install
-npm start
+npm run dev
 ```
 
 ## Server
