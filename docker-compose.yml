@@ -8,6 +8,8 @@ services:
       - "8081:8081"
     links:
       - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/meme-api
   mongo:
     image: mongo
     ports:
