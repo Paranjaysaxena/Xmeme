@@ -16,8 +16,8 @@
 - Publicly deployed HTTPS links.
 - Error handling for all routes.
 - Duplicate POST request from same payload gives error.
-- Modular, commented and documented code.
-- lean() function when large number of memes are present to improve perfoemance.
+- Modular, well-commented and documented code.
+- lean() function when large number of memes are present to improve performance.
 
 ### SETUP INSTRUCTIONS
 
