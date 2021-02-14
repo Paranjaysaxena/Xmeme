@@ -38,19 +38,21 @@ curl --location --request GET 'http://localhost:8081/memes'
 
 # Execute the POST /memes endpoint using curl
 
-curl --location --request POST 'http://localhost:8081/memes' \
+curl -d '{ "name": "xyz", "url": "https://abc.com", "caption": "This is a meme" }' -H 'Content-Type: application/json' http://localhost:8081/memes
 
---header 'Content-Type: application/json' \
+# curl --location --request POST 'http://localhost:8081/memes' \
 
---data-raw '{
+# --header 'Content-Type: application/json' \
 
-"name": "xyz",
+# --data-raw '{
 
-"url": "https://abc.com",
+# "name": "xyz",
 
-"caption": "This is a meme"
+# "url": "https://abc.com",
 
-}'
+# "caption": "This is a meme"
+
+# }'
 
 
 # Execute the GET /memes endpoint using curl
