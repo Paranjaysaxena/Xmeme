@@ -46,7 +46,7 @@ curl --location --request POST 'http://localhost:8081/memes' \
 
 "name": "xyz",
 
-"url": "abc.com",
+"url": "https://abc.com",
 
 "caption": "This is a meme"
 
