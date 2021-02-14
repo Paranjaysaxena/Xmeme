@@ -9,9 +9,8 @@ services:
     links:
       - mongo
   mongo:
-    container_name: mongo
     image: mongo
-    volumes:
-      - ./data:/data/db
     ports:
       - "27017:27017"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/meme

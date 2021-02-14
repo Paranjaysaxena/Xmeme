@@ -3,6 +3,7 @@ const express = require('express')
 const Meme = require('../models/meme')
 const router = new express.Router()
 
+
 // Routes
 // POST a meme
 router.post('/memes', async (req, res) => {
