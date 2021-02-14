@@ -10,5 +10,5 @@ sudo apt install -y npm
 #!/bin/bash
 
 sudo apt-get install -y mongodb
-sudo systemctl start mongod
-sudo systemctl enable mongod
+sudo apt-get update
+sudo service mongodb start
