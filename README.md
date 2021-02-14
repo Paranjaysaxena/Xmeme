@@ -1,6 +1,9 @@
-# Xmeme
+<h1 align="center">
+  <br>
+  <a href="https://paranjaya-xmeme.herokuapp.com/"><img src="https://github.com/Paranjaysaxena/Xmeme/blob/main/frontend/public/img/logo.png" alt="Xmeme" width="200"></a>
+</h1>
 
-[Live Demo](https://paranjaya-xmeme.herokuapp.com/)
+## [Live Demo](https://paranjaya-xmeme.herokuapp.com/)
 
 ## A simple Meme streaming application that uses a REST API which allowes CRUD operations on memes. Features include:
 
@@ -17,7 +20,7 @@
 Node.js version 14+ and npm must be installed on your machine. MongoDb must be installed and runing on port:27017. In terminal type the following commands to run the api server:
 
 ```
-git clone https://github.com/Paranjaysaxena/Task-Manager-API.git
+git clone https://github.com/Paranjaysaxena/Xmeme.git
 cd backend
 sudo npm install
 npm start
