@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://paranjaya-xmeme.herokuapp.com/"><img src="https://github.com/Paranjaysaxena/Xmeme/blob/main/frontend/public/img/logo.png" alt="Xmeme" width="200"></a>
+  <img src="https://github.com/Paranjaysaxena/Xmeme/blob/main/frontend/public/img/logo.png" alt="Xmeme" width="200">
 </h1>
 
 
@@ -54,8 +54,6 @@ The server is made on `nodejs` (v14.15.4)
 - `hbs` - to render hbs files.
 
 ## API
-
-- The base path of the API is `https://paranjaya-xmeme-api.herokuapp.com/`
 
 - The various requests and endpoints are:-
 
