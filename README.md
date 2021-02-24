@@ -10,7 +10,7 @@
 - Form for posting a Meme.
 - Search memes for a particular owner.
 - Update and Delete a Meme.
-- [Swagger API docs](https://paranjaya-xmeme-api.herokuapp.com/swagger-ui/).
+- Swagger API docs.
 - Docker Solution for the server.
 - Publicly deployed HTTPS links.
 - Error handling for all routes.
